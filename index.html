@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio</title>
+  
+  <!-- ✅ You only need one Boxicons stylesheet, the latest version -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Navigation -->
+  <nav class="navbar">
+    <a href="#" class="logo">Portfolio<span>.</span></a>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Resume</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ Animation Bars -->
+  <div class="bars-animation">
+    <div class="bar" style="--i:6;"></div>
+    <div class="bar" style="--i:5;"></div>
+    <div class="bar" style="--i:4;"></div>
+    <div class="bar" style="--i:3;"></div>
+    <div class="bar" style="--i:2;"></div>
+    <div class="bar" style="--i:1;"></div>
+  </div>
+
+  <!-- ✅ Home Section -->
+  <section class="home">
+    <div class="home-info">
+      <div class="content">
+        <h1>Thuthuzwa Iviwe Mshumpela</h1>
+        <h2>Aspiring 
+          <span style="--i:2;" data-text="AI Engineer">AI Engineer</span>
+          <span style="--i:1;" data-text="Frontend Developer">Frontend Developer</span>
+        </h2>
+        <p>
+          I'm skilled in a range of technologies including JavaScript, HTML, CSS, React, Node.js, and Git. I'm always expanding my toolkit to stay up-to-date with modern development practices.
+        </p>
+        <div class="btn-sci">
+          <a href="#" class="btn">Download CV</a>
+          <div class="sci">
+            <a href="#"><i class='bx bxl-github'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-gmail'></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home-img">
+      <div class="img-box">
+        <div class="img-item">
+          <img src="images/portfolio.jpg" alt="Thuthuzwa Mshumpela Portrait" />
+        </div>
+      </div>
+    </div>
+  </section> 
+
+  <!-- ✅ Services Section -->
+  <section class="services">
+    <h2 class="heading"> My<span> Services</span></h2>
+    <div class="services-container">
+      <div class="services-box">
+        <div class="icon">
+          <i class='bx bx-code-alt'></i>
+        </div>
+        <h3> Frontend Developer</h3>
+        <p>
+          I create responsive and user-friendly websites using HTML, CSS, and JavaScript. My focus is on delivering high-quality code and a seamless user experience.
+        </p>
+      </div>
+
+      <div class="services-box">
+        <div class="icon">
+          <i class='bx bxs-brain'></i>
+        </div>
+        <h3> AI Engineer</h3>
+        <p>
+          I design intelligent systems using Python and AI tools to solve real-world problems. My focus is on usability, ethical AI, and practical implementation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Resume Section -->
+  <section class="resume">
+    <div class="resume-container">
+      <div class="resume-box">
+        <h2> Why Hire Me?</h2>
+        <p class="desc">A driven, quick learner with a strong foundation in both software and AI development.</p>
+        <button class="resume-btn active">Experience</button>
+        <button class="resume-btn">Education</button>
+        <button class="resume-btn">Skills</button>
+        <button class="resume-btn">About Me</button>
+      </div>
+
+      <div class="resume-box">
+
+        <!-- Experience Section -->
+        <div class="resume-detail experience active">
+          <h2 class="heading">My <span>Experience</span></h2>
+          <div class="resume-list">
+            <div class="resume-item">
+              <p class="year">Feb 2024 - July 2024</p>
+              <h3>Frontend Developer Intern</h3>
+              <p class="company">BBD Software</p>
+              <p>Built responsive web apps using Angular and Node.js. Worked with APIs and SQL. Collaborated in an Agile team.</p>
+            </div>
+
+            <div class="resume-item">
+              <p class="year">April 2025 - Present</p>
+              <h3>AI Intern</h3>
+              <p class="company">CAPACITI</p>
+              <p>Developed AI tools for education and healthcare. Built no-code prototypes and analyzed model outputs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-detail education">
+          <h2 class="heading">My <span>Education</span></h2>
+          <div class="resume-list">
+            <div class="resume-item">
+              <p class="year">Jan 2017 - Dec 2020</p>
+              <h3>BSc in Horticulture</h3>
+              <p class="company">University Of Fort Hare</p>
+              <p>Focused on biological sciences, research, and critical thinking.</p>
+            </div>
+
+            <div class="resume-item">
+              <p class="year">Sep 2022 - Aug 2024</p>
+              <h3>Software Development</h3>
+              <p class="company">WeThinkCode_</p>
+              <p>Hands-on coding bootcamp with focus on full-stack development and problem-solving.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="resume-detail skills">
+          <h2 class="heading">My <span>Skills</span></h2>
+          <div class="resume-list">
+            <div class="resume-item"><i class='bx bxl-html5'></i><span>HTML5</span></div>
+            <div class="resume-item"><i class='bx bxl-css3'></i><span>CSS</span></div>
+            <div class="resume-item"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
+            <div class="resume-item"><i class='bx bxl-angular'></i><span>Angular</span></div>
+            <div class="resume-item"><i class='bx bx-data'></i><span>SQL</span></div>
+            <div class="resume-item"><i class='bx bxl-python'></i><span>Python</span></div>
+            <div class="resume-item"><i class='bx bxl-nodejs'></i><span>Node.js</span></div>
+          </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="resume-detail about-me">
+          <h2 class="heading">About <span>Me</span></h2>
+          <div class="resume-list">
+            <div class="resume-item"><p>Name: <span>Thuthuzwa Iviwe Mshumpela</span></p></div>
+            <div class="resume-item"><p>Gender: <span>Female</span></p></div>
+            <div class="resume-item"><p>Age: <span>26 years old</span></p></div>
+            <div class="resume-item"><p>City: <span>Johannesburg</span></p></div>
+            <div class="resume-item"><p>Experience: <span>7 months</span></p></div>
+            <div class="resume-item"><p>Freelance: <span>Available</span></p></div>
+            <div class="resume-item"><p>Phone: <span>(+27) 72144 9816</span></p></div>
+            <div class="resume-item"><p>Email: <span>thuthuzwamshumpela@gmail.com</span></p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Portfolio Section -->
+  <section class="portfolio active">
+    <h2 class="heading">Latest <span>Projects</span></h2>
+    <div class="portfolio-container">
+      <div class="portfolio-box">
+        <div class="portfolio-detail active">
+          <p class="number">01</p>
+          <h3>Weather App</h3>
+          <p class="desc">A weather application that provides real-time weather updates and forecasts.</p>
+          <div class="tech">
+            <p>HTML5, CSS3, JavaScript</p>
+          </div>
+          <div class="live-github">
+            <a href="#"><i class="bx bx-link-external"></i><span> Live Project</span></a>
+            <a href="#"><i class="bx bxl-github"></i><span> Repository</span></a>
+          </div>
+        </div>
+
+        <div class="portfolio-detail">
+          <p class="number">02</p>
+          <h3>Chatbot</h3>
+          <p class="desc">A chatbot application that uses AI to provide customer support and answer queries.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-box">
+        <div class="portfolio-carousel">
+          <div class="img-slide">
+            <div class="img-item">
+              <img src="images/weatherapp.jpg" alt="Weather App" />
+            </div>
+            <!-- <div class="img-item">
+              <img src="images/chatbot.jpg" alt="Chatbot" />
+            </div> -->
+          </div>
+        </div>
+
+        <div class="navigation">
+          <button class="arrow-left"><i class='bx bx-chevron-left'></i></button>
+          <button class="arrow-right"><i class='bx bx-chevron-right'></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
