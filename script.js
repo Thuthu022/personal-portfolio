@@ -1,4 +1,4 @@
-// Navigation functionality
+
 const navLinks = document.querySelectorAll('header nav a');
 const logoLink = document.querySelector('.logo');
 const sections = document.querySelectorAll('section');
@@ -42,6 +42,15 @@ navLinks.forEach(link => {
         });
     });
 });
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// document.querySelector('.hamburger').addEventListener('click', function() {
+//   document.querySelector('.navbar').classList.toggle('active');
+// });
 
 // Logo click scrolls to top
 logoLink.addEventListener('click', (e) => {
@@ -90,7 +99,6 @@ function initCarousel() {
         imgSlide.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
     
-    // Set initial button states
     updateButtonStates();
 }
 
@@ -131,6 +139,8 @@ prevBtn.addEventListener('click', () => {
         updateCarousel();
     }
 });
+
+
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {

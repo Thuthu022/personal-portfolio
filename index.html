@@ -8,19 +8,39 @@
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
   <link rel="icon" href="data:," />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js"></script>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <a href="#home" class="logo">Portfolio<span>.</span></a>
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- <button class="hamburger">☰</button>
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+     <li><a href="#">Services</a></li>
+    <li><a href="#">Resume</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav> -->
+   <nav class="navbar">
+  <a href="#home" class="logo">Thuthuzwa Mshumpela<span>.</span></a>
+  
+  <!-- Hamburger Button -->
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+  <ul class="nav-links">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
   </header>
 
   <div class="bars-animation">
@@ -50,22 +70,17 @@
   
    
   <div class="sci">
-    <!-- GitHub -->
-    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+  
+    <a href="https://github.com/thuthu022" target="_blank" rel="noopener noreferrer">
       <i class='bx bxl-github'></i>
     </a>
     
-    <!-- LinkedIn -->
+ 
     <a href="https://linkedin.com/in/thuthuzwa-mshumpela-87512727a/" target="_blank" rel="noopener noreferrer">
       <i class='bx bxl-linkedin'></i>
     </a>
     
-    <!-- Facebook
-    <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
-      <i class='bx bxl-facebook'></i>
-    </a> -->
-    
-    <!-- Gmail -->
+ 
    <a href="mailto:thuthuzwamshumpela@gmail.com" target="_blank" rel="noopener noreferrer">
     <i class='bx bxl-gmail'></i>
   </a>
@@ -163,7 +178,7 @@
             <div class="resume-item"><i class='bx bxl-html5'></i><span>HTML5</span></div>
             <div class="resume-item"><i class='bx bxl-css3'></i><span>CSS</span></div>
             <div class="resume-item"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
-            <div class="resume-item"><i class='bx bxl-angular'></i><span>Angular</span></div>
+            <!-- <div class="resume-item"><i class='bx bxl-angular'></i><span>Angular</span></div> -->
             <div class="resume-item"><i class='bx bx-data'></i><span>SQL</span></div>
             <div class="resume-item"><i class='bx bxl-python'></i><span>Python</span></div>
             <div class="resume-item"><i class='bx bxl-nodejs'></i><span>Node.js</span></div>
@@ -200,7 +215,9 @@
           <p class="tech">Technologies: HTML, CSS, JavaScript, API</p>
           <div class="live-github">
             <a href="#" target="_blank"><i class="bx bx-link-external"></i><span>Live Demo</span></a>
-            <a href="#" target="_blank"><i class="bx bxl-github"></i><span>GitHub</span></a>
+            <a href="https://github.com/thuthu022" target="_blank" rel="noopener noreferrer">
+      <i class='bx bxl-github'></i>
+    </a>
           </div>
         </div>
       </div>
@@ -208,12 +225,14 @@
       <div class="portfolio-detail" data-project="2">
         <div class="portfolio-box">
           <h3 class="number">02</h3>
-          <h3>Calculator</h3>
-          <p class="desc">A fully functional calculator with basic arithmetic operations and a clean UI. Built with HTML, CSS, and JavaScript.</p>
+          <h3>Resume</h3>
+          <p class="desc">AI Resume Builder is a smart tool that automatically generates professional resumes tailored to job descriptions. Using natural language processing, it analyzes your skills and experience to create optimized, ATS-friendly resumes. The platform offers customizable templates and real-time content suggestions to help users stand out to employers..</p>
           <p class="tech">Technologies: HTML, CSS, JavaScript</p>
           <div class="live-github">
             <a href="#" target="_blank"><i class="bx bx-link-external"></i><span>Live Demo</span></a>
-            <a href="#" target="_blank"><i class="bx bxl-github"></i><span>GitHub</span></a>
+             <a href="https://github.com/thuthu022" target="_blank" rel="noopener noreferrer">
+      <i class='bx bxl-github'></i>
+    </a>
           </div>
         </div>
       </div>
@@ -226,7 +245,9 @@
           <p class="tech">Technologies: HTML, CSS, JavaScript, NLP</p>
           <div class="live-github">
             <a href="#" target="_blank"><i class="bx bx-link-external"></i><span>Live Demo</span></a>
-            <a href="#" target="_blank"><i class="bx bxl-github"></i><span>GitHub</span></a>
+             <a href="https://github.com/thuthu022" target="_blank" rel="noopener noreferrer">
+      <i class='bx bxl-github'></i>
+    </a>
           </div>
         </div>
       </div>
@@ -239,7 +260,7 @@
             <img src="images/weatherapp.jpg" alt="Weather App">
           </div>
           <div class="img-item">
-            <img src="images/calculator.jpg" alt="Calculator">
+            <img src="images/resume.jpg" alt="Resume">
           </div>
           <div class="img-item">
             <img src="images/chatbot.jpg" alt="Chatbot">
@@ -296,11 +317,16 @@
             <textarea name="" id="" placeholder="Your Message" required></textarea>
           </div>
           <button type="submit" class="btn">Send Message</button>
+          <div id="thankYouPopup" class="popup hidden">
+  <p>Thank you, your email has been received!</p>
+</div>
         </form>
+        
       </div>
     </div>
   </section>
 
   <script src="script.js"></script>
+
 </body>
 </html>

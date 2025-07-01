@@ -257,11 +257,10 @@ a {
 }
 
 .img-item img {
-  width: 85%;
-  object-fit: cover;
-  mix-blend-mode: lighten;
-  position: absolute;
-  top: 30px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes the image fit the square while maintaining aspect ratio */
+  position: static; /* No need for absolute if we want it to fill the container */
 }
 
 .heading {
@@ -579,7 +578,7 @@ a {
   transition: transform 0.5s ease;
 }
 
-.img-slide .img-item {
+/* .img-slide .img-item {
   min-width: 100%;
   height: 100%;
   position: relative;
@@ -589,8 +588,26 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0; /* Changed from 1rem to 0 for square corners */
+
+} */
+
+.img-slide .img-item {
+  min-width: 100%;
+  aspect-ratio: 1 / 1;     
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;    
+  background: #323946;
 }
+
+.img-slide .img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;      
+  display: block;
+}
+
 
 .portfolio-box .number {
   font-size: 8rem;
@@ -663,7 +680,7 @@ a {
   font-size: 1.4rem;
   white-space: nowrap;
   background: white;
-  color: #7cf03d;
+  color: #94acd7;
   padding: 0.5rem 1rem;
   border-radius: 0.6rem;
   opacity: 0;
@@ -689,7 +706,7 @@ a {
   width: 5rem;
   height: 5rem;
   background: rgba(50, 57, 70, 0.7);
-  border: 2px solid #7cf03d;
+  border: 2px solid #94acd7;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -704,7 +721,7 @@ a {
 }
 
 .navigation button:hover {
-  background: #7cf03d;
+  background: #94acd7;
 }
 
 .navigation button:hover i {
@@ -720,13 +737,14 @@ a {
   color: #1f242d;
 }
 
-/* ================== CONTACT SECTION ================== */
+
 .contact-container {
   gap: 3rem;
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   background: #1f242d;
-  padding: 9% 9% 0;
+  padding: 9% 9% 5%;
+  min-height: calc(100vh - 100px);
 }
 
 .contact-container .contact-box:first-child {
@@ -757,21 +775,26 @@ a {
   display: inline-flex;
   background: #323946;
   font-size: 3rem;
-  color: #7cf03d;
+  color: #94acd7;
   padding: 1.2rem;
   border-radius: .6rem;
   margin-right: 1.5rem;
 }
 
 .contact-detail .detail p:first-child {
-  color: #7cf03d;
+  color: #94acd7;
 }
 
 .contact-box form {
   background: #323946;
-  padding: 2.5rem 3.5rem 3.5rem;
+  padding: 1.5rem 2rem;
   border-radius: 1rem;
   text-align: center;
+  display: flex;
+   margin-bottom: 2rem;
+  flex-direction: column;
+  height: 100%; 
+  box-sizing: border-box;
 }
 
 .contact-box .heading {
@@ -782,7 +805,8 @@ a {
 .contact-box .field-box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
+  flex-grow: 1
 }
 
 .contact-box .field-box input,
@@ -793,12 +817,14 @@ a {
   border-radius: .6rem;
   font-size: 1.6rem;
   color: #fff;
+  margin-bottom: 1rem;
 }
 
 .contact-box .field-box textarea {
   grid-column: 1 / -1;
-  height: 26rem;
+  height: 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    rem;
   resize: none;
+
 }
 
 .contact-box .field-box input:focus,
@@ -807,51 +833,236 @@ a {
 }
 
 .contact-box .btn {
-  margin-top: 2rem;
+  margin-top: 1rem;
   cursor: pointer;
+ 
 }
+
+/* Base overflow prevention */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Home section adjustments */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.home-img .img-box {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0.5rem solid var(--main-color);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: block !important; /* Force display */
+  margin: 0 auto;
+}
+
+.home-img .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Contact section structure */
+.contact-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-box {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.contact-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+
 
 @media screen and (max-width: 992px) {
   .portfolio-container {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
   
   .portfolio-carousel-container {
     order: -1;
-    height: 35rem;
+    height: 30rem;
+  }
+  
+    .home-img .img-box {
+    width: 25rem;
+    height: auto;          /* changed from fixed height */
+    max-width: 100%;
+    max-height: 25rem;     /* limit max height */
+    margin: 0 auto 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  
+  .home-content {
+    text-align: center;
+  }
+
+  /* Ensure contact form appears */
+  .contact-box {
+    order: 2; /* Force to appear after other content */
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .home-img .img-box {
-    width: 30rem;
-    height: 30rem;
+    width: 22rem;
+    height: auto;          /* changed from fixed height */
+    max-width: 90%;
+    max-height: 22rem;     /* limit max height */
   }
-  .contact-box .field-box {
-    grid-template-columns: 1fr;
-  }
-  .resume-container {
-    grid-template-columns: 1fr;
-  }
+  
   .portfolio-carousel-container {
     height: 25rem;
   }
-  
-  .portfolio-box .number {
-    font-size: 6rem;
+
+  /* Contact form adjustments */
+  .contact-box .field-box {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-box {
+    padding: 1.5rem;
+    margin-top: 0;
+  }
+}
+
+/* Navigation styles */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 600px) {
+  .hamburger {
+    display: flex;
+    z-index: 1000;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
   }
   
-  .portfolio-box h3 {
-    font-size: 2.8rem;
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #94acd7;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    transition: right 0.5s ease;
+    z-index: 999;
+    padding: 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
   
-  .navigation button {
-    width: 4rem;
-    height: 4rem;
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li a {
+    color: #fff;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
   }
   
-  .navigation button i {
-    font-size: 2rem;
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  
+  .home-img .img-box {
+    width: 20rem;
+    height: auto;          
+    max-width: 85%;
+    max-height: 20rem;     
+    margin-bottom: 2rem;
+  }
+  
+  
+  .contact-box {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  .contact-box h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-box form {
+    padding: 0.5rem;
+  }
+
+  .input-field, .textarea-field {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -859,36 +1070,144 @@ a {
   html {
     font-size: 50%;
   }
+  
+  .home-img .img-box {
+    width: 18rem;
+    height: 18rem;
+    max-width: 80%;
+  }
+  
+  .portfolio-carousel-container {
+    height: 20rem;
+  }
+
+ 
+  .contact-box {
+    padding: 0.5rem;
+  }
+
+  .contact-box .btn {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 400px) {
-  .home-details,
+  .home-info .content,
   .resume-box h2,
   .resume-box .heading,
   .resume-box .desc,
-  .resume-detail .about .resume-item {
+  .resume-detail .about .resume-item,
+  .resume-list .resume-item {
     text-align: center;
   }
-  .home-detail .btn-sci {
+  
+  .home-info .btn-sci {
     flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
   }
 
-  .home-detail .btn-sci .sci {
+  .home-info .btn-sci .sci {
     margin-left: 0;
     margin-bottom: 2rem;
   }
+  
   .contact-box form {
-    padding: 2.5rem 3rem 3.5rem;
+    padding: 0.5rem 0;
   }
 
   .contact-box h2 {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
   }
+  
   .portfolio {
-    padding: 9% 5% 0;
+    padding: 5% 3% 0;
   }
   
   .live-github {
     justify-content: center;
+    gap: 1rem;
   }
+  
+  .home-img .img-box {
+    width: 16rem;
+    height: 16rem;
+    max-width: 75%;
+  }
+
+  /* Navigation adjustments */
+  .nav-links {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .home-img .img-box {
+    width: 14rem;
+    height: 14rem;
+    max-width: 70%;
+  }
+
+  .img-item {
+    order: 2;
+    width: 80%;
+    max-width: 250px;
+    border-radius: 50%;
+    margin-top: 2rem;
+  }
+  
+  /* Final contact form adjustments */
+  .contact-box form {
+    padding: 0;
+  }
+
+  .contact-box h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Force visibility of critical elements */
+.home-img, 
+.contact-box, 
+.contact-box form,
+.home-img .img-box {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Base styles for the circular image (add this if not already in your CSS) */
+.home-img .img-box {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  background-color:#94acd7;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  font-size: 18px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
 }
