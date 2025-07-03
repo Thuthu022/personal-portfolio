@@ -1,43 +1,35 @@
-
 const navLinks = document.querySelectorAll('header nav a');
 const logoLink = document.querySelector('.logo');
 const sections = document.querySelectorAll('section');
 const navbar = document.querySelector('.navbar');
 
-// Highlight active nav link based on scroll position
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 300)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
-    });
-});
 
 // Smooth scrolling for nav links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        
+        if (!targetId || !targetId.startsWith('#')) return;
+        // Find the section by id (strip the #)
+        const sectionId = targetId.replace('#', '');
+        const targetSection = document.getElementById(sectionId);
+        if (!targetSection) return;
         // Remove active class from all links
         navLinks.forEach(l => l.classList.remove('active'));
         // Add active class to clicked link
         link.classList.add('active');
-        
+        // Close mobile nav if open
+        const navLinksUl = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+        if (navLinksUl && hamburger && navLinksUl.classList.contains('active')) {
+            navLinksUl.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
         // Scroll to section
+        const yOffset = navbar ? navbar.getBoundingClientRect().height : 0;
+        const y = targetSection.getBoundingClientRect().top + window.pageYOffset - yOffset;
         window.scrollTo({
-            top: targetSection.offsetTop - navbar.offsetHeight,
+            top: y,
             behavior: 'smooth'
         });
     });
@@ -47,10 +39,6 @@ document.querySelector('.hamburger').addEventListener('click', function() {
   this.classList.toggle('active');
   document.querySelector('.nav-links').classList.toggle('active');
 });
-
-// document.querySelector('.hamburger').addEventListener('click', function() {
-//   document.querySelector('.navbar').classList.toggle('active');
-// });
 
 // Logo click scrolls to top
 logoLink.addEventListener('click', (e) => {
@@ -142,23 +130,22 @@ prevBtn.addEventListener('click', () => {
 
 
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Add IDs to sections for navigation
-    sections.forEach((section, index) => {
-        const ids = ['home', 'services', 'resume', 'portfolio', 'contact'];
-        if (index < ids.length) {
-            section.id = ids[index];
+// Contact form popup
+const contactForm = document.querySelector('.contact-box form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Show thank you popup
+        let popup = document.getElementById('thankYouPopup');
+        if (popup) {
+            popup.classList.add('show');
         }
+        // Reset form
+        this.reset();
+        // Hide popup after 3 seconds
+        setTimeout(() => {
+            if (popup) popup.classList.remove('show');
+        }, 3000);
     });
-    
-    // Update href attributes in nav links
-    navLinks.forEach((link, index) => {
-        if (index < sections.length) {
-            link.href = `#${sections[index].id}`;
-        }
-    });
-    
-    // Initialize carousel
-    initCarousel();
-});
+}
+

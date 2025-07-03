@@ -13,20 +13,9 @@
 </head>
 <body>
   <header>
-    <!-- <button class="hamburger">☰</button>
-<nav class="navbar">
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-     <li><a href="#">Services</a></li>
-    <li><a href="#">Resume</a></li>
-    <li><a href="#">Portfolio</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav> -->
    <nav class="navbar">
   <a href="#home" class="logo">Thuthuzwa Mshumpela<span>.</span></a>
-  
-  <!-- Hamburger Button -->
+
   <div class="hamburger">
     <span></span>
     <span></span>
@@ -207,14 +196,15 @@
   
   <div class="portfolio-container">
     <div class="portfolio-details-container">
+      
       <div class="portfolio-detail active" data-project="1">
         <div class="portfolio-box">
           <h3 class="number">01</h3>
-          <h3>Weather App</h3>
-          <p class="desc">A responsive weather application that displays current weather conditions and forecasts for any location. Built with HTML, CSS, JavaScript, and using a weather API.</p>
-          <p class="tech">Technologies: HTML, CSS, JavaScript, API</p>
+          <h3>Resume</h3>
+          <p class="desc">AI Resume Builder is a smart tool that automatically generates professional resumes tailored to job descriptions. Using natural language processing, it analyzes your skills and experience to create optimized, ATS-friendly resumes. The platform offers customizable templates and real-time content suggestions to help users stand out to employers..</p>
+          <p class="tech">Technologies: HTML, CSS, JavaScript</p>
           <div class="live-github">
-            <a href="#" target="_blank"><i class="bx bx-link-external"></i><span>Live Demo</span></a>
+            <a href="https://generated-resume2.vercel.app" target="_blank" rel="noopener noreferrer"><i class="bx bx-link-external"></i><span>Live Demo</span></a>
             <a href="https://github.com/thuthu022" target="_blank" rel="noopener noreferrer">
       <i class='bx bxl-github'></i>
     </a>
@@ -225,26 +215,11 @@
       <div class="portfolio-detail" data-project="2">
         <div class="portfolio-box">
           <h3 class="number">02</h3>
-          <h3>Resume</h3>
-          <p class="desc">AI Resume Builder is a smart tool that automatically generates professional resumes tailored to job descriptions. Using natural language processing, it analyzes your skills and experience to create optimized, ATS-friendly resumes. The platform offers customizable templates and real-time content suggestions to help users stand out to employers..</p>
-          <p class="tech">Technologies: HTML, CSS, JavaScript</p>
-          <div class="live-github">
-            <a href="#" target="_blank"><i class="bx bx-link-external"></i><span>Live Demo</span></a>
-             <a href="https://github.com/thuthu022" target="_blank" rel="noopener noreferrer">
-      <i class='bx bxl-github'></i>
-    </a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="portfolio-detail" data-project="3">
-        <div class="portfolio-box">
-          <h3 class="number">03</h3>
           <h3>Chatbot</h3>
           <p class="desc">An interactive chatbot that responds to user queries. Built with HTML, CSS, JavaScript, and natural language processing.</p>
           <p class="tech">Technologies: HTML, CSS, JavaScript, NLP</p>
           <div class="live-github">
-            <a href="#" target="_blank"><i class="bx bx-link-external"></i><span>Live Demo</span></a>
+            <a href="https://ai-related-chat-bot-git-aichatbot-thuthuzwas-projects.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="bx bx-link-external"></i><span>Live Demo</span></a>
              <a href="https://github.com/thuthu022" target="_blank" rel="noopener noreferrer">
       <i class='bx bxl-github'></i>
     </a>
@@ -256,13 +231,8 @@
     <div class="portfolio-carousel-container">
       <div class="portfolio-carousel">
         <div class="img-slide">
-          <div class="img-item">
-            <img src="images/weatherapp.jpg" alt="Weather App">
-          </div>
-          <div class="img-item">
-  <a href="https://generated-resume2.vercel.app" target="_blank" rel="noopener noreferrer">
-    <img src="images/resume.jpg" alt="Resume">
-  </a>
+<div class="img-item">
+  <img src="images/resume.jpg" alt="Resume">
 </div>
 
           <div class="img-item">
@@ -320,12 +290,8 @@
             <textarea name="" id="" placeholder="Your Message" required></textarea>
           </div>
           <button type="submit" class="btn">Send Message</button>
-          <div id="thankYouPopup" class="popup hidden">
-  <p>Thank you, your email has been received!</p>
-</div>
+          <div id="thankYouPopup" class="thank-you-popup">Thank you for your email, its been received</div>
         </form>
-        
-      </div>
     </div>
   </section>
 
