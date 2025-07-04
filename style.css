@@ -1219,7 +1219,7 @@ html, body {
 .home-img, 
 .contact-box, 
 .contact-box form,
-.home-img .img-box {
+.home-img .img-box {    
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -1235,23 +1235,27 @@ html, body {
 
 .thank-you-popup {
   position: absolute;
-  top: -4rem;
+  top: 1.5rem;
   left: 50%;
   transform: translate(-50%, 0);
   background: #94acd7;
   color: #fff;
-  padding:0.5rem 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   z-index: 10000;
-  font-size: 2.4rem;
+  font-size: 1.4rem;
   text-align: center;
   display: none;
-
+  min-width: 180px;
+  max-width: 90vw;
+  width: auto;
   margin-top: 0;
   opacity: 0.98;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: opacity 0.3s;
+  line-height: 1.4;
+  word-break: break-word;
 }
 .thank-you-popup.show {
   display: block;

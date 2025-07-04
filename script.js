@@ -129,23 +129,33 @@ prevBtn.addEventListener('click', () => {
 });
 
 
-
-// Contact form popup
 const contactForm = document.querySelector('.contact-box form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Show thank you popup
-        let popup = document.getElementById('thankYouPopup');
-        if (popup) {
-            popup.classList.add('show');
-        }
-        // Reset form
-        this.reset();
-        // Hide popup after 3 seconds
-        setTimeout(() => {
-            if (popup) popup.classList.remove('show');
-        }, 3000);
-    });
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    const data = {
+      name: inputs[0].value,
+      email: inputs[1].value,
+      phone: inputs[2].value,
+      subject: inputs[3].value,
+      message: inputs[4].value,
+    };
+    try {
+      await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      // Show thank you popup, reset form, etc.
+      let popup = document.getElementById('thankYouPopup');
+      if (popup) popup.classList.add('show');
+      this.reset();
+      setTimeout(() => {
+        if (popup) popup.classList.remove('show');
+      }, 3000);
+    } catch (err) {
+      alert('Failed to send message.');
+    }
+  });
 }
-
