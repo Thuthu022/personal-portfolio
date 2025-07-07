@@ -129,33 +129,26 @@ prevBtn.addEventListener('click', () => {
 });
 
 
-const contactForm = document.querySelector('.contact-box form');
+// Contact form popup fix for new structure
+const contactForm = document.querySelector('.contact-form-box');
 if (contactForm) {
-  contactForm.addEventListener('submit', async function(e) {
+  contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const inputs = contactForm.querySelectorAll('input, textarea');
-    const data = {
-      name: inputs[0].value,
-      email: inputs[1].value,
-      phone: inputs[2].value,
-      subject: inputs[3].value,
-      message: inputs[4].value,
-    };
-    try {
-      await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      // Show thank you popup, reset form, etc.
-      let popup = document.getElementById('thankYouPopup');
-      if (popup) popup.classList.add('show');
-      this.reset();
-      setTimeout(() => {
-        if (popup) popup.classList.remove('show');
-      }, 3000);
-    } catch (err) {
-      alert('Failed to send message.');
+    // Simulate sending email (remove fetch for now)
+    let popup = document.getElementById('thankYouPopup');
+    if (popup) {
+      popup.classList.add('show');
+      popup.style.display = 'block';
+      popup.style.opacity = '1';
     }
+    contactForm.reset();
+    setTimeout(() => {
+      if (popup) {
+        popup.classList.remove('show');
+        popup.style.display = '';
+        popup.style.opacity = '';
+      }
+    }, 3000);
   });
 }
