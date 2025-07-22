@@ -259,8 +259,8 @@ a {
 .img-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Makes the image fit the square while maintaining aspect ratio */
-  position: static; /* No need for absolute if we want it to fill the container */
+  object-fit: cover; 
+  position: static; 
 }
 
 .heading {
@@ -561,7 +561,7 @@ a {
 .portfolio-carousel-container {
   position: relative;
   width: 100%;
-  height: 25rem; /* Reduce height from 45rem to 25rem */
+  height: 25rem; 
   overflow: hidden;
 }
 
@@ -915,9 +915,9 @@ a {
   
     .home-img .img-box {
     width: 25rem;
-    height: auto;          /* changed from fixed height */
+    height: auto;          
     max-width: 100%;
-    max-height: 25rem;     /* limit max height */
+    max-height: 25rem;     
     margin: 0 auto 3rem;
     border-radius: 50%;
     object-fit: cover;
@@ -928,25 +928,25 @@ a {
     text-align: center;
   }
 
-  /* Ensure contact form appears */
+ 
   .contact-box {
-    order: 2; /* Force to appear after other content */
+    order: 2; 
   }
 }
 
 @media screen and (max-width: 768px) {
   .home-img .img-box {
     width: 22rem;
-    height: auto;          /* changed from fixed height */
+    height: auto;          
     max-width: 90%;
-    max-height: 22rem;     /* limit max height */
+    max-height: 22rem;    
   }
   
   .portfolio-carousel-container {
     height: 25rem;
   }
 
-  /* Contact form adjustments */
+ 
   .contact-box .field-box {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -963,7 +963,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 120px 3% 0; /* Increased top padding to push image below navbar */
+    padding: 120px 3% 0; 
     gap: 2rem;
     height: auto;
   }
@@ -990,7 +990,7 @@ a {
   }
 }
 
-/* Navigation styles */
+
 .nav-links {
   display: flex;
   list-style: none;
@@ -1194,7 +1194,7 @@ a {
 
   
 
-  /* Navigation adjustments */
+ 
   .nav-links {
     width: 80%;
   }
@@ -1215,7 +1215,7 @@ a {
     margin-top: 2rem;
   }
   
-  /* Final contact form adjustments */
+  
   .contact-box form {
     padding: 0;
   }
@@ -1225,7 +1225,7 @@ a {
   }
 }
 
-/* Force visibility of critical elements */
+
 .home-img, 
 .contact-box, 
 .contact-box form,
@@ -1235,7 +1235,7 @@ a {
   opacity: 1 !important;
 }
 
-/* Base styles for the circular image (add this if not already in your CSS) */
+
 .home-img .img-box {
   border-radius: 50%;
   overflow: hidden;

@@ -4,7 +4,7 @@ const sections = document.querySelectorAll('section');
 const navbar = document.querySelector('.navbar');
 
 
-// Smooth scrolling for nav links
+
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -112,7 +112,6 @@ function updateButtonStates() {
     nextBtn.classList.toggle('disabled', currentIndex === portfolioDetails.length - 1);
 }
 
-// Next button click handler
 nextBtn.addEventListener('click', () => {
     if (currentIndex < portfolioDetails.length - 1) {
         currentIndex++;
@@ -120,7 +119,7 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
-// Previous button click handler
+
 prevBtn.addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
@@ -129,13 +128,13 @@ prevBtn.addEventListener('click', () => {
 });
 
 
-// Contact form popup fix for new structure
+
 const contactForm = document.querySelector('.contact-form-box');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const inputs = contactForm.querySelectorAll('input, textarea');
-    // Simulate sending email (remove fetch for now)
+   
     let popup = document.getElementById('thankYouPopup');
     if (popup) {
       popup.classList.add('show');
